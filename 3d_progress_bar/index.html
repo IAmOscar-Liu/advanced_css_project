@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="cube">
+        <div class="front">
+          <div class="side">Loading</div>
+        </div>
+        <div class="back">
+          <div class="side">Loading</div>
+        </div>
+        <div class="top">
+          <div class="side">Loading</div>
+        </div>
+        <div class="bottom">
+          <div class="side">Loading</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const sides = document.querySelectorAll(".side");
+
+      setInterval(() => {
+        const width = parseInt(Math.random() * 100) + "%";
+        for (let side of sides) {
+          side.style.width = width;
+          side.innerHTML = "Loading " + width + " ...";
+        }
+      }, 3000);
+    </script>
+  </body>
+</html>
